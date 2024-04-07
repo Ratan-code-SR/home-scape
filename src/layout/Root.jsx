@@ -1,9 +1,10 @@
-import {Outlet} from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
+import Nav from '../components/header/Nav';
 
 const Root = () => {
     return (
         <div>
-            <h2>hello</h2>
+            <Nav />
             <Outlet />
         </div>
     );
