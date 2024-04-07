@@ -1,0 +1,102 @@
+[
+    {
+      "id": 1,
+      "image_url": "https://i.ibb.co/6tHj0Vh/banner1.jpg",
+      "segment_name": "Apartment",
+      "description": "Modern apartment with stunning views",
+      "price": "$200,000",
+      "Status": "sale",
+      "Area": "1500 sq ft",
+      "location": "City Center",
+      "facilities": ["living room", "swimming pool", "gym"]
+    },
+    {
+      "id": 2,
+      "image_url": "https://i.ibb.co/KK77VmK/banner2.jpg",
+      "segment_name": "House",
+      "description": "Cozy family home with spacious garden",
+      "price": "$1,500/month",
+      "Status": "rent",
+      "Area": "2500 sq ft",
+      "location": "Suburbia",
+      "facilities": ["living room", "backyard", "garage"]
+    },
+    {
+      "id": 3,
+      "image_url": "https://i.ibb.co/1MV7fxk/banner3.jpg",
+      "segment_name": "Villa",
+      "description": "Luxurious villa with panoramic views",
+      "price": "$800,000",
+      "Status": "sale",
+      "Area": "3500 sq ft",
+      "location": "Seaside",
+      "facilities": ["living room", "swimming pool", "terrace"]
+    },
+    {
+      "id": 4,
+      "image_url": "https://i.ibb.co/QNQrW1m/1.jpg",
+      "segment_name": "Studio",
+      "description": "Chic studio apartment in vibrant neighborhood",
+      "price": "$1,200/month",
+      "Status": "rent",
+      "Area": "800 sq ft",
+      "location": "Downtown",
+      "facilities": ["living room", "gym", "rooftop terrace"]
+    },
+    {
+      "id": 5,
+      "image_url": "https://i.ibb.co/8B7FYF8/2.jpg",
+      "segment_name": "Penthouse",
+      "description": "Elegant penthouse with city skyline views",
+      "price": "$1,000,000",
+      "Status": "sale",
+      "Area": "4000 sq ft",
+      "location": "High-rise district",
+      "facilities": ["living room", "swimming pool", "private elevator"]
+    },
+    {
+      "id": 6,
+      "image_url": "https://i.ibb.co/VJVYPRC/3.jpg",
+      "segment_name": "Duplex",
+      "description": "Contemporary duplex with spacious layout",
+      "price": "$2,500/month",
+      "Status": "rent",
+      "Area": "2000 sq ft",
+      "location": "Urban",
+      "facilities": ["living room", "balcony", "parking"]
+    },
+    {
+      "id": 7,
+      "image_url": "https://i.ibb.co/7GPqDLB/4.jpg",
+      "segment_name": "Townhouse",
+      "description": "Quaint townhouse in historic district",
+      "price": "$400,000",
+      "Status": "sale",
+      "Area": "1800 sq ft",
+      "location": "Old Town",
+      "facilities": ["living room", "backyard", "fireplace"]
+    },
+    {
+      "id": 8,
+      "image_url": "https://i.ibb.co/kXyyxkC/5.jpg",
+      "segment_name": "Loft",
+      "description": "Industrial-style loft in converted warehouse",
+      "price": "$3,000/month",
+      "Status": "rent",
+      "Area": "1600 sq ft",
+      "location": "Art District",
+      "facilities": ["living room", "exposed brick", "roof deck"]
+    },
+    {
+      "id": 9,
+      "image_url": "https://i.ibb.co/v3LT2cc/1.jpg",
+      "segment_name": "Mansion",
+      "description": "Grand mansion with sprawling grounds",
+      "price": "$5,000,000",
+      "Status": "sale",
+      "Area": "10000 sq ft",
+      "location": "Countryside",
+      "facilities": ["living room", "swimming pool", "tennis court"]
+    }
+  ]
+  
