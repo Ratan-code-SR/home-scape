@@ -1,7 +1,11 @@
 import { useForm } from "react-hook-form"
 import { Link } from "react-router-dom";
 import { FaEyeSlash, FaRegEye } from "react-icons/fa";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../components/provider/AuthProvider";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const Register = () => {
     const [showPassword, setShowPassword] = useState(false)
@@ -11,16 +15,20 @@ const Register = () => {
         reset,
         formState: { errors },
     } = useForm()
-
+    const { signUpUser } = useContext(AuthContext)
     const onSubmit = (data) => {
         const email = data.email;
         const password = data.password;
-        console.log(data, email, password);
+        signUpUser(email, password)
+            .then(result => {
+                console.log(result.user)
+                toast.success("Account create successfully!")
+            })
+            .catch(error => {
+                toast.error(error.message)
+            })
     }
 
-    const onHandlePassword = () => {
-        setShowPassword(!showPassword)
-    }
     return (
         <div className="hero bg-base-200">
             <div className=" ">
@@ -67,14 +75,14 @@ const Register = () => {
                             <label className="label">
                                 <span className="label-text font-bold">Password</span>
                             </label>
-                            <span onClick={()=> setShowPassword(!showPassword)} className="absolute right-2 bottom-3 ">{showPassword ? <FaRegEye /> : <FaEyeSlash />}</span>
+                            <span onClick={() => setShowPassword(!showPassword)} className="absolute right-2 bottom-3 ">{showPassword ? <FaRegEye /> : <FaEyeSlash />}</span>
                             <input
                                 defaultValue="mamaMami" {...register("email")}
 
                                 {...register("password", { required: true })}
 
                                 {...register("password", { pattern: /^(?=.*[a-z])(?=.*[A-Z]).+$/ })}
-                                type={`${showPassword? 'text': 'password'}`} placeholder="password" className="input input-bordered " />
+                                type={`${showPassword ? 'text' : 'password'}`} placeholder="password" className="input input-bordered " />
 
                             {errors.password && <small className="text-red-400">
                                 Password Must have an Uppercase and a Lowercase letter
@@ -85,6 +93,7 @@ const Register = () => {
                         </div>
                         <p className="text-center py-1">You have already an account  <Link className="text-orange-500 font-bold underline">Log in</Link></p>
                     </form>
+                    <ToastContainer />
                 </div>
             </div>
         </div>
