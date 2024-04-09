@@ -1,61 +1,29 @@
-import React, { useRef, useState } from 'react';
-// Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
 
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-import './style.css';
-import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import { useLoaderData } from "react-router-dom";
 import Slider from './Slider';
-
+import Estate from "./Estate";
 
 
 const Home = () => {
-    const progressCircle = useRef(null);
-    const progressContent = useRef(null);
-    const onAutoplayTimeLeft = (s, time, progress) => {
-        progressCircle.current.style.setProperty('--progress', 1 - progress);
-        progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
-    };
+
     const loadData = useLoaderData();
     // console.log(data);
 
     return (
         <>
-
-            <Swiper
-                spaceBetween={30}
-                centeredSlides={true}
-                autoplay={{
-                    delay: 2500,
-                    disableOnInteraction: false,
-                }}
-                pagination={{
-                    clickable: true,
-                }}
-                navigation={true}
-                modules={[Autoplay, Pagination, Navigation]}
-                onAutoplayTimeLeft={onAutoplayTimeLeft}
-                className="mySwiper"
-            >
-                {
-                    loadData.slice(0,4).map(data => (
-                        <SwiperSlide key={data.id}>
-                            <Slider data={data} />
-                        </SwiperSlide>
-                    ))
-                }
-
-                <div className="autoplay-progress" slot="container-end">
-                    <svg viewBox="0 0 48 48" ref={progressCircle}>
-                        <circle cx="24" cy="24" r="20"></circle>
-                    </svg>
-                    <span ref={progressContent}></span>
+            <Slider key={loadData.id} loadData={loadData} />
+            <section className="my-5">
+                <div className="my-10 text-center">
+                    <h1 className="text-5xl font-bold">Featured Properties</h1>
+                    <h5 className="text-3xl font-bold">Handpicked properties by our team.</h5>
                 </div>
-            </Swiper>
+                <div className="grid md:grid-cols-3 gap-3 grid-cols-1">
+                    {
+                        loadData.map(data => <Estate key={data.id} data={data} />)
+                    }
+                </div>
+
+            </section>
         </>
     );
 }

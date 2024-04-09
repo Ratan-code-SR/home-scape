@@ -8,7 +8,9 @@
       "Status": "sale",
       "Area": "1500 sq ft",
       "location": "City Center",
-      "facilities": ["living room", "swimming pool", "gym"]
+      "facilities": ["bad: 4", "swimming pool", "gym"],
+      "bad": "4",
+      "baths": "2"
     },
     {
       "id": 2,
@@ -19,7 +21,9 @@
       "Status": "rent",
       "Area": "2500 sq ft",
       "location": "Suburbia",
-      "facilities": ["living room", "backyard", "garage"]
+      "facilities": ["living room", "backyard", "garage"],
+      "bad": "5",
+      "baths": "3"
     },
     {
       "id": 3,
@@ -30,7 +34,9 @@
       "Status": "sale",
       "Area": "3500 sq ft",
       "location": "Seaside",
-      "facilities": ["living room", "swimming pool", "terrace"]
+      "facilities": ["living room", "swimming pool", "terrace"],
+      "bad": "3",
+      "baths": "2"
     },
     {
       "id": 4,
@@ -41,7 +47,9 @@
       "Status": "rent",
       "Area": "800 sq ft",
       "location": "Downtown",
-      "facilities": ["living room", "gym", "rooftop terrace"]
+      "facilities": ["living room", "gym", "rooftop terrace"],
+      "bad": "6",
+      "baths": "5"
     },
     {
       "id": 5,
@@ -52,7 +60,9 @@
       "Status": "sale",
       "Area": "4000 sq ft",
       "location": "High-rise district",
-      "facilities": ["living room", "swimming pool", "private elevator"]
+      "facilities": ["living room", "swimming pool", "private elevator"],
+      "bad": "4",
+      "baths": "3"
     },
     {
       "id": 6,
@@ -63,7 +73,9 @@
       "Status": "rent",
       "Area": "2000 sq ft",
       "location": "Urban",
-      "facilities": ["living room", "balcony", "parking"]
+      "facilities": ["living room", "balcony", "parking"],
+      "bad": "4",
+      "baths": "3"
     },
     {
       "id": 7,
@@ -74,7 +86,9 @@
       "Status": "sale",
       "Area": "1800 sq ft",
       "location": "Old Town",
-      "facilities": ["living room", "backyard", "fireplace"]
+      "facilities": ["living room", "backyard", "fireplace"],
+      "bad": "6",
+      "baths": "4"
     },
     {
       "id": 8,
@@ -85,7 +99,9 @@
       "Status": "rent",
       "Area": "1600 sq ft",
       "location": "Art District",
-      "facilities": ["living room", "exposed brick", "roof deck"]
+      "facilities": ["living room", "exposed brick", "roof deck"],
+      "bad": "4",
+      "baths": "3"
     },
     {
       "id": 9,
@@ -96,7 +112,9 @@
       "Status": "sale",
       "Area": "10000 sq ft",
       "location": "Countryside",
-      "facilities": ["living room", "swimming pool", "tennis court"]
+      "facilities": ["living room", "swimming pool", "tennis court"],
+      "bad": "5",
+      "baths": "3"
     }
   ]
   
