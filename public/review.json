@@ -1,0 +1,39 @@
+[
+    {
+      "name": "John Doe",
+      "profile": "https://example.com/profiles/johndoe",
+      "review": "Great service, highly recommended!",
+      "rating": 4.8
+    },
+    {
+      "name": "Jane Smith",
+      "profile": "https://example.com/profiles/janesmith",
+      "review": "Excellent experience, will definitely return!",
+      "rating": 4.9
+    },
+    {
+      "name": "Mike Johnson",
+      "profile": "https://example.com/profiles/mikejohnson",
+      "review": "Average service, could be better.",
+      "rating": 3.5
+    },
+    {
+      "name": "Emily Brown",
+      "profile": "https://example.com/profiles/emilybrown",
+      "review": "Outstanding quality, exceeded expectations!",
+      "rating": 5.0
+    },
+    {
+      "name": "David Wilson",
+      "profile": "https://example.com/profiles/davidwilson",
+      "review": "Poor service, would not recommend.",
+      "rating": 2.1
+    },
+    {
+      "name": "Sarah Lee",
+      "profile": "https://example.com/profiles/sarahlee",
+      "review": "Decent experience, nothing extraordinary.",
+      "rating": 3.7
+    }
+  ]
+  

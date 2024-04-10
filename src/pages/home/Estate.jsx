@@ -8,12 +8,11 @@ import { MdOutlineBedroomParent, MdBathtub ,MdOutlineSquareFoot,MdAddHomeWork } 
 
 const Estate = ({ data }) => {
     const { id, image_url, segment_name, price, location, bad, baths, Area } = data;
-    console.log(data);
-    const findId = useParams()
+    // console.log(data);
     return (
         <>
 
-            <div className="card w-full bg-base-100 rounded-none p-2 border-2 border-green-300 rounded-md">
+            <div className="card w-full bg-base-100 p-2 border-2 border-green-300 rounded-md">
                 <div className="relative">
                     <img className="h-[250px]  " src={image_url} alt="Shoes" />
                     <p className="absolute left-2 bottom-1 text-green-400 opacity-90 text-2xl font-bold">{price}</p>

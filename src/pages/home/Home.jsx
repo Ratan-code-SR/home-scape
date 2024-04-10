@@ -2,6 +2,7 @@
 import { useLoaderData } from "react-router-dom";
 import Slider from './Slider';
 import Estate from "./Estate";
+import Review from "./review/Review";
 
 
 const Home = () => {
@@ -11,18 +12,34 @@ const Home = () => {
 
     return (
         <>
-            <Slider key={loadData.id} loadData={loadData} />
+            <Slider loadData={loadData} />
             <section className="my-5">
-                <div className="my-10 text-center">
+                <div className="text-center py-4 ">
+                    <p className="text-2xl font-bold">Featured Properties</p>
+                    <h5 className="text-xl font-bold mb-3">Handpicked properties by our team.</h5>
+                    <p className="border-2 w-20 border-orange-500 mx-auto "></p>
+
+                </div>
+                {/* <div className="my-10 text-center">
                     <h1 className="text-5xl font-bold">Featured Properties</h1>
                     <h5 className="text-3xl font-bold">Handpicked properties by our team.</h5>
-                </div>
+                </div> */}
                 <div className="grid md:grid-cols-3 gap-3 grid-cols-1">
                     {
                         loadData.map(data => <Estate key={data.id} data={data} />)
                     }
                 </div>
 
+            </section>
+            <section className="my-10">
+                <div className="text-center py-2 ">
+                    <p className="text-2xl font-bold">Client Review</p>
+                    <p className="border-2 w-20 border-orange-500 mx-auto"></p>
+                </div>
+
+                <div className="">
+                    <Review />
+                </div>
             </section>
         </>
     );
