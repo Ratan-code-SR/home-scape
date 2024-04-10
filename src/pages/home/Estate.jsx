@@ -7,7 +7,7 @@ import { MdOutlineBedroomParent, MdBathtub ,MdOutlineSquareFoot,MdAddHomeWork } 
 
 
 const Estate = ({ data }) => {
-    const { id, image_url, segment_name, price, location, bad, baths, Area } = data;
+    const { id, image_url, segment_name, price, location, bed, baths, Area } = data;
     // console.log(data);
     return (
         <>
@@ -22,7 +22,7 @@ const Estate = ({ data }) => {
                     <h2 className="card-title"><MdAddHomeWork />{segment_name}</h2>
                     <h5 className="flex gap-2 items-center"><CiLocationOn /> {location}</h5>
                     <div className="flex gap-5 text-md items-center">
-                        <p className="flex gap-1 items-center"><MdOutlineBedroomParent /> {bad} bedroom</p>
+                        <p className="flex gap-1 items-center"><MdOutlineBedroomParent /> {bed} bedroom</p>
                         <p className="flex gap-1 items-center"><MdBathtub /> {baths} baths</p>
                         <p className="flex gap-1 items-center"><MdOutlineSquareFoot/> {Area}</p>
                     </div>
