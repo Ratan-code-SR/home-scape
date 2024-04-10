@@ -20,11 +20,11 @@ const Details = () => {
                 <div className='md:w-1/2 w-full'>
                     <div className='flex justify-between'>
                         <div>
-                            <p className='text-3xl leading-5'>{segment_name} <span className='bg-[#ff385c] text-sm text-white  font-bold px-2 rounded-full'>{Status}</span></p>
+                            <p className='md:text-3xl leading-5'>{segment_name} <span className='bg-[#ff385c] text-sm text-white  md:font-bold px-2 rounded-full'>{Status}</span></p>
                             <p className="flex items-center my-1"><CiLocationOn /> {location}</p>
                         </div>
                         <div>
-                            <p className='text-[#ff385c] font-bold text-2xl'>{price}</p>
+                            <p className='text-[#ff385c] font-bold md:text-2xl'>{price}</p>
                             <p>{Area}</p>
                         </div>
                     </div>

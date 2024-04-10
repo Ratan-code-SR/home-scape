@@ -14,7 +14,7 @@ const Estate = ({ data }) => {
 
             <div className="card w-full bg-base-100 p-2 border-2 border-green-300 rounded-md">
                 <div className="relative">
-                    <img className="h-[250px]  " src={image_url} alt="Shoes" />
+                    <img className="h-[250px] w-full " src={image_url} alt="Shoes" />
                     <p className="absolute left-2 bottom-1 text-green-400 opacity-90 text-2xl font-bold">{price}</p>
                 </div>
 

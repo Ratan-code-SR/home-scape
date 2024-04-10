@@ -20,10 +20,7 @@ const Home = () => {
                     <p className="border-2 w-20 border-orange-500 mx-auto "></p>
 
                 </div>
-                {/* <div className="my-10 text-center">
-                    <h1 className="text-5xl font-bold">Featured Properties</h1>
-                    <h5 className="text-3xl font-bold">Handpicked properties by our team.</h5>
-                </div> */}
+              
                 <div className="grid md:grid-cols-3 gap-3 grid-cols-1">
                     {
                         loadData.map(data => <Estate key={data.id} data={data} />)
