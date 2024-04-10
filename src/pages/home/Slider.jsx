@@ -8,17 +8,18 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import './style.css';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { Link } from 'react-router-dom';
 
 
 
 const Slider = ({ loadData }) => {
+
     const progressCircle = useRef(null);
     const progressContent = useRef(null);
     const onAutoplayTimeLeft = (s, time, progress) => {
         progressCircle.current.style.setProperty('--progress', 1 - progress);
         progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
     };
-    // console.log(data);
 
     return (
         <>
@@ -46,7 +47,7 @@ const Slider = ({ loadData }) => {
                                     <div className="max-w-md">
                                         <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
                                         <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                                       <button className='btn btn-success'>more now</button>
+                                      <Link to={`/details/${data.id}`}> <button className='btn btn-success'>more now</button></Link>
                                     </div>
                                 </div>
                             </div>

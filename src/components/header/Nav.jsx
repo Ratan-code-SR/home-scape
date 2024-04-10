@@ -1,7 +1,10 @@
-import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../provider/AuthProvider";
 
 
 const Nav = () => {
+    const { user, logoutUser } = useContext(AuthContext)
     const navLinks = <>
         <li className="ml-5 hover:underline transition-all delay-75 font-bold "><NavLink to='/'>Home</NavLink></li>
         <li className="ml-5 hover:underline transition-all delay-75 font-bold "><NavLink to='/about'>About</NavLink></li>
@@ -26,10 +29,30 @@ const Nav = () => {
                 </ul>
             </div>
             <div className="navbar-end flex gap-3">
-                <div className="w-10 ">
-                    <img className="rounded-full" alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-                </div>
-                <a className="btn">Button</a>
+
+                {
+                    user ? <>
+                        <div className="w-10 ">
+                            <img className="rounded-full" alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                        </div>
+                        <button onClick={() => {
+                            logoutUser()
+                        }} href="#_" class="relative rounded px-5 py-2.5 overflow-hidden group bg-green-500 relative hover:bg-gradient-to-r hover:from-green-500 hover:to-green-400 text-white hover:ring-2 hover:ring-offset-2 hover:ring-green-400 transition-all ease-out duration-300">
+                            <span class="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
+                            <span class="relative">Logout</span>
+                        </button>
+                    </> : <>
+                        <Link to='/Register'><button href="#_" class="relative rounded px-5 py-2.5 overflow-hidden group bg-green-500 relative hover:bg-gradient-to-r hover:from-green-500 hover:to-green-400 text-white hover:ring-2 hover:ring-offset-2 hover:ring-green-400 transition-all ease-out duration-300">
+                            <span class="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
+                            <span class="relative">Register</span>
+                        </button></Link>
+                        <Link to='/login'> <button href="#_" class="relative rounded px-5 py-2.5 overflow-hidden group bg-green-500 relative hover:bg-gradient-to-r hover:from-green-500 hover:to-green-400 text-white hover:ring-2 hover:ring-offset-2 hover:ring-green-400 transition-all ease-out duration-300">
+                            <span class="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
+                            <span class="relative">Log In</span>
+                        </button></Link>
+
+                    </>
+                }
             </div>
         </div>
     );

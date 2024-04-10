@@ -19,9 +19,10 @@ const Register = () => {
     const onSubmit = (data) => {
         const email = data.email;
         const password = data.password;
+        reset()
         signUpUser(email, password)
             .then(result => {
-                console.log(result.user)
+                // console.log(result.user)
                 toast.success("Account create successfully!")
             })
             .catch(error => {
@@ -30,10 +31,15 @@ const Register = () => {
     }
 
     return (
-        <div className="hero bg-base-200">
+        <div className="hero bg-green-500 p-5 ">
             <div className=" ">
-                <p className="text-3xl font-bold text-center my-1">Register Account</p>
-                <div className="card  md:w-[500px] lg:w-[500px] w-full shadow-2xl bg-base-100">
+            <div className="text-center py-4 ">
+                    <p className="text-3xl font-bold text-center text-white my-1">Register Account</p>
+
+                    <p className="border-2 w-20 border-red-500 mx-auto "></p>
+                </div>
+
+                <div className="card  rounded-none md:w-[500px] lg:w-[500px] w-full shadow-2xl bg-base-100">
 
                     <form onSubmit={handleSubmit(onSubmit)} className="card-body gap-0 px-4 py-0">
                         <div className="form-control">
@@ -89,9 +95,9 @@ const Register = () => {
                             </small>}
                         </div>
                         <div className="form-control mt-6">
-                            <button type="submit" className="btn btn-primary">Register</button>
+                            <button type="submit" className="btn btn-success text-white">Register Account</button>
                         </div>
-                        <p className="text-center py-1">You have already an account  <Link className="text-orange-500 font-bold underline">Log in</Link></p>
+                        <p className="text-center py-1">You have already an account  <Link to='/login' className="text-green-500 font-bold underline">Log in</Link></p>
                     </form>
                     <ToastContainer />
                 </div>
