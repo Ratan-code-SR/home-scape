@@ -33,7 +33,7 @@ const Register = () => {
             .then((result) => {
                 // console.log(result.user)
                 toast.success("Account create successfully!")
-                
+
                     // set user profile
                 updateProfile(result.user, {
                     displayName: username, photoURL: imageUrl
@@ -42,6 +42,7 @@ const Register = () => {
                 }).catch((error) => {
                     console.log(error.message);
                 });
+
             })
             .catch(error => {
                 toast.error(error.message)
@@ -90,7 +91,7 @@ const Register = () => {
                                 <span className="label-text font-bold">photoURL</span>
                             </label>
                             <input
-                                defaultValue="https://i.ibb.co/6tHj0Vh/banner1.jpg" {...register("photoURL")}
+                                defaultValue="https://i.ibb.co/vjcKbF3/1-5.jpg" {...register("photoURL")}
                                 {...register("photoURL", { required: true })}
 
                                 type="text" placeholder="Image URL" className="input input-bordered" />

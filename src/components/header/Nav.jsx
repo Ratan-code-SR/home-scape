@@ -5,6 +5,17 @@ import { AuthContext } from "../provider/AuthProvider";
 
 const Nav = () => {
     const { user, logoutUser } = useContext(AuthContext)
+
+    // if (user !== null) {
+
+    //     const displayName = user.displayName;
+    //     const email = user.email;
+    //     const photoURL = user.photoURL;
+
+    //     // console.log(displayName,email,photoURL);
+
+    // }
+
     const navLinks = <>
         <li className="ml-5 hover:underline transition-all delay-75 font-bold "><NavLink to='/'>Home</NavLink></li>
         <li className="ml-5 hover:underline transition-all delay-75 font-bold "><NavLink to='/about'>About</NavLink></li>
@@ -32,21 +43,24 @@ const Nav = () => {
 
                 {
                     user ? <>
-                        <div className="w-10 ">
-                            <img className="rounded-full" alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                        <div className="tooltip tooltip-bottom" data-tip={`${user.displayName ? user.displayName : "UnKnown"}`}>
+                            <div className="  ">
+                                <img className="w-10 h-10 rounded-full" alt="Tailwind CSS Navbar component " src={user.photoURL} />
+                            </div>
                         </div>
+
                         <button onClick={() => {
                             logoutUser()
-                        }}  className="relative rounded px-5 py-2.5 overflow-hidden group bg-green-500 relative hover:bg-gradient-to-r hover:from-green-500 hover:to-green-400 text-white hover:ring-2 hover:ring-offset-2 hover:ring-green-400 transition-all ease-out duration-300">
+                        }} className="relative rounded px-5 py-2.5 overflow-hidden group bg-green-500 relative hover:bg-gradient-to-r hover:from-green-500 hover:to-green-400 text-white hover:ring-2 hover:ring-offset-2 hover:ring-green-400 transition-all ease-out duration-300">
                             <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
                             <span className="relative">Logout</span>
                         </button>
                     </> : <>
-                        <Link to='/Register'><button  className="relative rounded px-5 py-2.5 overflow-hidden group bg-green-500 relative hover:bg-gradient-to-r hover:from-green-500 hover:to-green-400 text-white hover:ring-2 hover:ring-offset-2 hover:ring-green-400 transition-all ease-out duration-300">
+                        <Link to='/Register'><button className="relative rounded px-5 py-2.5 overflow-hidden group bg-green-500 relative hover:bg-gradient-to-r hover:from-green-500 hover:to-green-400 text-white hover:ring-2 hover:ring-offset-2 hover:ring-green-400 transition-all ease-out duration-300">
                             <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
                             <span className="relative">Register</span>
                         </button></Link>
-                        <Link to='/login'> <button  className="relative rounded px-5 py-2.5 overflow-hidden group bg-green-500 relative hover:bg-gradient-to-r hover:from-green-500 hover:to-green-400 text-white hover:ring-2 hover:ring-offset-2 hover:ring-green-400 transition-all ease-out duration-300">
+                        <Link to='/login'> <button className="relative rounded px-5 py-2.5 overflow-hidden group bg-green-500 relative hover:bg-gradient-to-r hover:from-green-500 hover:to-green-400 text-white hover:ring-2 hover:ring-offset-2 hover:ring-green-400 transition-all ease-out duration-300">
                             <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
                             <span className="relative">Log In</span>
                         </button></Link>
