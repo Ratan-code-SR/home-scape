@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form"
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { FaEyeSlash, FaRegEye } from "react-icons/fa";
@@ -9,7 +9,9 @@ import github from '../../assets/github.png'
 import { AuthContext } from "../../components/provider/AuthProvider";
 const Register = () => {
     const [showPassword, setShowPassword] = useState(false)
-    const {signInUser} = useContext(AuthContext)
+    const { signInUser } = useContext(AuthContext)
+    const location = useLocation()
+    const navigate = useNavigate()
     const {
         register,
         handleSubmit,
@@ -22,15 +24,16 @@ const Register = () => {
         const password = data.password;
         console.log(data, email, password);
         reset()
-        signInUser(email,password)
-        .then((result)=> {
-            console.log(result);
-            toast.success("Log in successfully!")
-        })
-        .catch(error =>{
-            console.log(error.message);
-            toast.error(error.message)
-        })
+        signInUser(email, password)
+            .then((result) => {
+                console.log(result);
+                toast.success("Log in successfully!")
+                navigate(location?.state? location.state : "/")
+            })
+            .catch(error => {
+                console.log(error.message);
+                toast.error(error.message)
+            })
     }
     return (
         <div className="hero my-10 bg-green-500 p-5">
@@ -88,7 +91,7 @@ const Register = () => {
                         </div>
                         <p className="text-center py-1">You have don't account  <Link to='/register' className="text-blue-500 font-bold text-sm underline">Register Now</Link></p>
                     </form>
-                    <ToastContainer/>
+                    <ToastContainer />
                 </div>
             </div>
         </div>

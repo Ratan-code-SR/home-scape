@@ -5,6 +5,7 @@ import Home from "../pages/home/Home";
 import Register from "../pages/register/Register";
 import Login from "../pages/login/Login";
 import Details from "../pages/details/Details";
+import Protected from "../components/protected/Protected";
 
 const router = createBrowserRouter([
     {
@@ -19,7 +20,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/details/:id",
-                element: <Details />,
+                element: <Protected> <Details /></Protected>,
                 loader: () => fetch('../../public/data.json')
 
             },

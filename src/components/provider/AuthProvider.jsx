@@ -6,29 +6,35 @@ import auth from "../../firebase/firebase.config";
 export const AuthContext = createContext(null)
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null)
+    const [loading, setLoading] = useState(true)
     // user sign up
     const signUpUser = (email, password) => {
+        setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password)
     }
 
     // user sign in
     const signInUser = (email, password) => {
+        setLoading(true)
         return signInWithEmailAndPassword(auth, email, password)
     }
 
     // logout user
     const logoutUser = () => {
+        setLoading(true)
         return signOut(auth)
     }
 
+   
     useEffect(() => {
         const subscribed = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser)
+            setLoading(false)
         })
         return () => subscribed()
     }, [])
-
-    const authInfo = { signUpUser, signInUser, logoutUser,user }
+    console.log(user);
+    const authInfo = { signUpUser, signInUser, logoutUser, user, loading }
     return (
         <AuthContext.Provider value={authInfo}>
             {children}

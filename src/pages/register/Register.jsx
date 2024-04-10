@@ -5,10 +5,12 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../components/provider/AuthProvider";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { updateProfile } from "firebase/auth";
 
 
 const Register = () => {
     const [showPassword, setShowPassword] = useState(false)
+
     const {
         register,
         handleSubmit,
@@ -17,23 +19,41 @@ const Register = () => {
     } = useForm()
     const { signUpUser } = useContext(AuthContext)
     const onSubmit = (data) => {
+        // console.log(data);
+        // console.log(data);
         const email = data.email;
         const password = data.password;
+        const username = data.name;
+        const imageUrl = data.
+            photoURL;
+
         reset()
+
         signUpUser(email, password)
-            .then(result => {
+            .then((result) => {
                 // console.log(result.user)
                 toast.success("Account create successfully!")
+                
+                    // set user profile
+                updateProfile(result.user, {
+                    displayName: username, photoURL: imageUrl
+                }).then((result) => {
+                   console.log(result.user);
+                }).catch((error) => {
+                    console.log(error.message);
+                });
             })
             .catch(error => {
                 toast.error(error.message)
             })
+
+
     }
 
     return (
         <div className="hero bg-green-500 p-5 ">
             <div className=" ">
-            <div className="text-center py-4 ">
+                <div className="text-center py-4 ">
                     <p className="text-3xl font-bold text-center text-white my-1">Register Account</p>
 
                     <p className="border-2 w-20 border-red-500 mx-auto "></p>
