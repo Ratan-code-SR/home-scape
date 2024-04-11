@@ -7,11 +7,13 @@ import Login from "../pages/login/Login";
 import Details from "../pages/details/Details";
 import Protected from "../components/protected/Protected";
 import Update_profile from "../components/update_profile/Update_profile";
+import Error from "../pages/error/Error";
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <Root />,
+        errorElement: <Error/>,
         children: [
             {
                 path: "/",
@@ -37,8 +39,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/updateProfile",
-                element: <Update_profile />
-
+                element: <Protected><Update_profile /></Protected>
             }
         ]
     },

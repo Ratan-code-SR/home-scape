@@ -6,6 +6,9 @@
     height: 100%;
   }
   
+  .none_padding{
+    padding: 0!important;
+  }
   .swiper-slide {
     text-align: center;
     font-size: 18px;

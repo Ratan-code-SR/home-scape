@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { CiLocationOn } from "react-icons/ci";
 import { MdOutlineBedroomParent, MdBathtub ,MdOutlineSquareFoot,MdAddHomeWork } from "react-icons/md";
 

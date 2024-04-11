@@ -7,14 +7,11 @@ import { FaRegCheckCircle } from "react-icons/fa";
 const Details = () => {
     const detailsData = useLoaderData()
     const { id } = useParams()
-    // console.log(id);
-    // console.log(data);
     const findData = detailsData.find(data => data.id == id);
-    // console.log(findData);
+
     const { amenities, image_url, segment_name, price, location, bed, baths, Area, Status, facilities } = findData;
     return (
         <div className='my-10 bg-[#f5f7fb] p-2'>
-
 
             <div className='md:flex grid grid-cols-1 gap-5 '>
                 <div className='md:w-1/2 w-full'>
@@ -49,11 +46,8 @@ const Details = () => {
                             <div>
                                 <div className="overflow-x-auto">
                                     <table className="table">
-
                                         <tbody>
-
                                             <tr>
-
                                                 <td className='text-sm font-bold'>Price: <span className='font-normal '>{price}</span></td>
                                                 <td className='text-sm font-bold'>Area: <span className='font-normal '>{Area}</span></td>
                                                 <td className='text-sm font-bold'>Property type: <span className='font-normal '>{segment_name}</span></td>
@@ -106,8 +100,6 @@ const Details = () => {
                                                     </td>)
                                                 }
                                             </tr>
-
-
 
                                         </tbody>
                                     </table>

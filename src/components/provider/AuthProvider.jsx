@@ -11,6 +11,7 @@ const AuthProvider = ({ children }) => {
     const signUpUser = (email, password) => {
         setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password)
+      
     }
 
     // user sign in
@@ -34,7 +35,7 @@ const AuthProvider = ({ children }) => {
         return () => subscribed()
     }, [])
     console.log(user);
-    const authInfo = { signUpUser, signInUser, logoutUser, user, loading }
+    const authInfo = { signUpUser, signInUser, logoutUser, user, loading,setUser }
     return (
         <AuthContext.Provider value={authInfo}>
             {children}

@@ -6,16 +6,6 @@ import { AuthContext } from "../provider/AuthProvider";
 const Nav = () => {
     const { user, logoutUser } = useContext(AuthContext)
 
-    // if (user !== null) {
-
-    //     const displayName = user.displayName;
-    //     const email = user.email;
-    //     const photoURL = user.photoURL;
-
-    //     // console.log(displayName,email,photoURL);
-
-    // }
-
     const navLinks = <>
         <li className="ml-5 hover:underline transition-all delay-75 font-bold "><NavLink to='/'>Home</NavLink></li>
         <li className="ml-5 hover:underline transition-all delay-75 font-bold "><NavLink to='/about'>About</NavLink></li>
@@ -43,7 +33,7 @@ const Nav = () => {
 
                 {
                     user ? <>
-                        <div className="tooltip tooltip-bottom" data-tip={`${user.displayName ? user.displayName : "UnKnown"}`}>
+                        <div className="tooltip tooltip-bottom z-10" data-tip={`${user.displayName ? user.displayName : "Not Found"}`}>
                             <div className="  ">
                                 <img className="w-10 h-10 rounded-full" alt="Tailwind CSS Navbar component " src={user.photoURL} />
                             </div>

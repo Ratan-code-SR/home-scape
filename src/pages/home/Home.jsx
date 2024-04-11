@@ -1,6 +1,6 @@
 
 import { useLoaderData } from "react-router-dom";
-import Slider from './Slider';
+import Slider from './slide/Slider';
 import Estate from "./Estate";
 import Review from "./review/Review";
 

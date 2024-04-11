@@ -6,18 +6,20 @@ import { AuthContext } from "../../components/provider/AuthProvider";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { updateProfile } from "firebase/auth";
+import { useNavigate } from 'react-router-dom'
+
 
 
 const Register = () => {
     const [showPassword, setShowPassword] = useState(false)
-
+    const navigate = useNavigate()
     const {
         register,
         handleSubmit,
         reset,
         formState: { errors },
     } = useForm()
-    const { signUpUser } = useContext(AuthContext)
+    const { signUpUser, setUser, loading } = useContext(AuthContext)
     const onSubmit = (data) => {
         // console.log(data);
         // console.log(data);
@@ -29,25 +31,28 @@ const Register = () => {
 
         reset()
 
-        signUpUser(email, password)
+        signUpUser(email, password, data)
             .then((result) => {
-                // console.log(result.user)
-                toast.success("Account create successfully!")
-
-                    // set user profile
                 updateProfile(result.user, {
-                    displayName: username, photoURL: imageUrl
-                }).then((result) => {
-                   console.log(result.user);
-                }).catch((error) => {
-                    console.log(error.message);
+                    displayName: username,
+                    photoURL: imageUrl,
                 });
+
+                toast.success("Account create successfully!")
+                setUser({ displayName: username, photoURL: imageUrl })
+                navigate(location?.state ? location.state : "/");
+                if (loading) {
+                    return <>
+                        <div className="flex justify-center my-52">
+                            <span className="loading loading-spinner text-neutral text-center"></span>
+                        </div>
+                    </>
+                }
 
             })
             .catch(error => {
                 toast.error(error.message)
             })
-
 
     }
 

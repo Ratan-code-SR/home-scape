@@ -1,5 +1,5 @@
 
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
@@ -9,7 +9,6 @@ import 'swiper/css/navigation';
 import './style.css';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import { Link } from 'react-router-dom';
-
 
 
 const Slider = ({ loadData }) => {
@@ -40,7 +39,7 @@ const Slider = ({ loadData }) => {
             >
                 {
                     loadData.slice(0, 4).map(data => (
-                        <SwiperSlide key={data.id} >
+                        <SwiperSlide className='none_padding' key={data.id} >
                             <div className="hero h-[500px] z-0" style={{ backgroundImage: `url(${data.image_url})` }}>
                                 <div className="hero-overlay "></div>
                                 <div className="hero-content text-center text-neutral-content">
