@@ -1,6 +1,10 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const Error = () => {
+    useEffect(() => {
+        document.title = "error not found data"
+    }, [])
     return (
         <div>
             <div className="min-h-screen flex flex-grow items-center justify-center bg-gray-50">

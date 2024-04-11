@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form"
 import { Link } from "react-router-dom";
 import { FaEyeSlash, FaRegEye } from "react-icons/fa";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../components/provider/AuthProvider";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -20,6 +20,9 @@ const Register = () => {
         formState: { errors },
     } = useForm()
     const { signUpUser, setUser, loading } = useContext(AuthContext)
+    useEffect(() => {
+        document.title = "Register"
+    }, [])
     const onSubmit = (data) => {
 
         const email = data.email;
@@ -59,7 +62,7 @@ const Register = () => {
     }
 
     return (
-        <div className="hero bg-green-500 p-5 ">
+        <div className="hero bg-gradient-to-r from-green-200 to-green-400 p-5 ">
             <div className=" ">
                 <div className="text-center py-4 ">
                     <p className="text-3xl font-bold text-center text-white my-1">Register Account</p>
@@ -123,7 +126,10 @@ const Register = () => {
                             </small>}
                         </div>
                         <div className="form-control mt-6">
-                            <button type="submit" className="btn btn-success text-white">Register Account</button>
+                            <button type="submit" className="relative rounded px-5 py-2.5 overflow-hidden group  bg-[#ff385c]  hover:bg-gradient-to-r hover:from-green-500 hover:to-green-400 text-white hover:text-black hover:ring-2 hover:ring-offset-2 hover:ring-green-400 transition-all ease-out duration-300">
+                                <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
+                                <span className="relative">Register Account</span>
+                            </button>
                         </div>
                         <p className="text-center py-1">You have already an account  <Link to='/login' className="text-green-500 font-bold underline">Log in</Link></p>
                     </form>

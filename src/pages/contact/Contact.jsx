@@ -1,11 +1,15 @@
 import { MdAddLocationAlt } from "react-icons/md";
 import { IoMdMailUnread } from "react-icons/io";
 import { FaPhoneAlt } from "react-icons/fa";
+import { useEffect } from "react";
 
 
 const Contact = () => {
+    useEffect(() => {
+        document.title = "Contact"
+    }, [])
     return (
-        <section className="py-6 bg-green-500 text-black ">
+        <section className="py-6 bg-gradient-to-r from-green-200 to-green-400 text-black ">
             <div className="grid max-w-6xl grid-cols-1 px-6 mx-auto lg:px-8 md:grid-cols-2 md:divide-x">
                 <div className="py-6 "
                 >

@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form"
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AuthContext } from "../../components/provider/AuthProvider";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -14,7 +14,9 @@ const Update_profile = () => {
         formState: { errors },
     } = useForm()
     const { user } = useContext(AuthContext)
-    // console.log(user);
+    useEffect(() => {
+        document.title = "Update Profile"
+    }, [])
     const onSubmit = (data) => {
         const email = data.email;
         const username = data.name;
@@ -39,7 +41,7 @@ const Update_profile = () => {
     }
 
     return (
-        <div className="hero bg-green-500 p-5 ">
+        <div className="hero bg-gradient-to-r from-green-200 to-green-400 p-5 ">
             <div className=" ">
                 <div className="text-center py-4 ">
                     <p className="text-3xl font-bold text-center text-white my-1">Update Your Profile</p>

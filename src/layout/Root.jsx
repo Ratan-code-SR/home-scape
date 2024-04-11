@@ -5,9 +5,11 @@ import Footer from '../components/footer/Footer'
 const Root = () => {
     return (
 
-        <div>
-            <header  className='container mx-auto px-4 bg-green-200'>
-                <Nav />
+        <div >
+            <header  className='container mx-auto px-4 '>
+              <div className='bg-gradient-to-r from-green-400 to-green-200-500 border-b-2 border-b-[#ffce28]'>
+              <Nav />
+              </div>
             </header>
             <main className='container mx-auto px-4'>
                 <Outlet />
