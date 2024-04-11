@@ -9,7 +9,7 @@ import github from '../../assets/github.png'
 import { AuthContext } from "../../components/provider/AuthProvider";
 const Register = () => {
     const [showPassword, setShowPassword] = useState(false)
-    const { signInUser } = useContext(AuthContext)
+    const { signInUser, googleLogin, githubLogin } = useContext(AuthContext)
     const location = useLocation()
     const navigate = useNavigate()
     const {
@@ -28,13 +28,53 @@ const Register = () => {
             .then((result) => {
                 console.log(result);
                 toast.success("Log in successfully!")
-                navigate(location?.state? location.state : "/")
+
+                setTimeout(() => {
+                    navigate(location?.state ? location.state : "/")
+                }, 1000);
             })
             .catch(error => {
                 console.log(error.message);
                 toast.error(error.message)
             })
     }
+    const onHandleGoogleLogin = () => {
+        googleLogin()
+            .then((result) => {
+                toast.success("Log in successfully!")
+
+                if (result) {
+                    setTimeout(() => {
+                        navigate(location?.state ? location.state : "/")
+                    }, 1000);
+                }
+
+            })
+            .catch(error => {
+                console.log(error.message);
+                toast.error(error.message)
+            })
+    }
+
+    const onHandleGithubLogin = () => {
+        githubLogin()
+            .then((result) => {
+                toast.success("Log in successfully!")
+
+                if (result) {
+                    setTimeout(() => {
+                        navigate(location?.state ? location.state : "/")
+                    }, 1000);
+                }
+
+            })
+            .catch(error => {
+                console.log(error.message);
+                toast.error(error.message)
+            })
+    }
+
+
     return (
         <div className="hero my-10 bg-green-500 p-5">
             <div className="">
@@ -85,12 +125,13 @@ const Register = () => {
                             <span className="text-xl">or</span>
                             <p className="border-b border-black"> </p>
                         </div>
-                        <div className="flex items-center justify-center gap-3 ">
-                            <button className="w-12"><img src={google} alt="" /></button>
-                            <button className="w-10"><img src={github} alt="" /></button>
-                        </div>
-                        <p className="text-center py-1">You have don't account  <Link to='/register' className="text-blue-500 font-bold text-sm underline">Register Now</Link></p>
+
                     </form>
+                    <div className="flex items-center justify-center gap-3 ">
+                        <button onClick={onHandleGoogleLogin} className="w-12"><img src={google} alt="" /></button>
+                        <button onClick={onHandleGithubLogin} className="w-10"><img src={github} alt="" /></button>
+                    </div>
+                    <p className="text-center py-1">You have don't account  <Link to='/register' className="text-blue-500 font-bold text-sm underline">Register Now</Link></p>
                     <ToastContainer />
                 </div>
             </div>

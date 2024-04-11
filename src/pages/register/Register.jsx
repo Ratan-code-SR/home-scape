@@ -21,26 +21,28 @@ const Register = () => {
     } = useForm()
     const { signUpUser, setUser, loading } = useContext(AuthContext)
     const onSubmit = (data) => {
-        // console.log(data);
-        // console.log(data);
+
         const email = data.email;
         const password = data.password;
-        const username = data.name;
-        const imageUrl = data.
+        const displayName = data.name;
+        const photoURL = data.
             photoURL;
 
         reset()
 
-        signUpUser(email, password, data)
+        signUpUser(email, password)
             .then((result) => {
+                toast.success("Account create successfully!")
                 updateProfile(result.user, {
-                    displayName: username,
-                    photoURL: imageUrl,
+                    displayName:displayName,
+                    photoURL:photoURL
+
                 });
 
-                toast.success("Account create successfully!")
-                setUser({ displayName: username, photoURL: imageUrl })
-                navigate(location?.state ? location.state : "/");
+                setUser({ displayName:displayName, photoURL:photoURL })
+                setTimeout(() => {
+                    navigate(location?.state ? location.state : "/")
+                }, 1000);
                 if (loading) {
                     return <>
                         <div className="flex justify-center my-52">

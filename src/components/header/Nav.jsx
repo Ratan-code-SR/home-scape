@@ -5,7 +5,6 @@ import { AuthContext } from "../provider/AuthProvider";
 
 const Nav = () => {
     const { user, logoutUser } = useContext(AuthContext)
-
     const navLinks = <>
         <li className="ml-5 hover:underline transition-all delay-75 font-bold "><NavLink to='/'>Home</NavLink></li>
         <li className="ml-5 hover:underline transition-all delay-75 font-bold "><NavLink to='/about'>About</NavLink></li>

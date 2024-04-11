@@ -14,6 +14,7 @@ const Update_profile = () => {
         formState: { errors },
     } = useForm()
     const { user } = useContext(AuthContext)
+    // console.log(user);
     const onSubmit = (data) => {
         const email = data.email;
         const username = data.name;
@@ -25,8 +26,8 @@ const Update_profile = () => {
 
         updateProfile(user, {
             displayName: username, photoURL: imageUrl, email: email
-        }).then((result) => {
-            console.log(result.user);
+        }).then(() => {
+          
             toast.success('Profile update successfully!')
 
         }).catch((error) => {
@@ -54,6 +55,7 @@ const Update_profile = () => {
                                 <span className="label-text font-bold">Name</span>
                             </label>
                             <input
+                             defaultValue={`${user.displayName? user.displayName: ""}`} 
                                 {...register("name")}
                                 {...register("name", { required: false })}
                                 type="text" placeholder="name" className="input input-bordered" />
@@ -64,7 +66,9 @@ const Update_profile = () => {
                             <label className="label">
                                 <span className="label-text font-bold">Email</span>
                             </label>
-                            <input
+                            <input 
+                              defaultValue={`${user.email? user.email: ""}`} 
+                         
                                 {...register("email")}
                                 {...register("email", { required: false })}
 
@@ -77,6 +81,7 @@ const Update_profile = () => {
                                 <span className="label-text font-bold">photoURL</span>
                             </label>
                             <input
+                            defaultValue={`${user.photoURL? user.photoURL: ""}`} 
                                 {...register("photoURL")}
                                 {...register("photoURL", { required: false })}
                                 type="text" placeholder="Image URL" className="input input-bordered" />
