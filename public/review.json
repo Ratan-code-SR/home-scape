@@ -1,39 +1,38 @@
 [
-    {
-      "name": "John Doe",
-      "profile": "https://example.com/profiles/johndoe",
-      "review": "Great service, highly recommended!",
-      "rating": 4.8
-    },
-    {
-      "name": "Jane Smith",
-      "profile": "https://example.com/profiles/janesmith",
-      "review": "Excellent experience, will definitely return!",
-      "rating": 4.9
-    },
-    {
-      "name": "Mike Johnson",
-      "profile": "https://example.com/profiles/mikejohnson",
-      "review": "Average service, could be better.",
-      "rating": 3.5
-    },
-    {
-      "name": "Emily Brown",
-      "profile": "https://example.com/profiles/emilybrown",
-      "review": "Outstanding quality, exceeded expectations!",
-      "rating": 5.0
-    },
-    {
-      "name": "David Wilson",
-      "profile": "https://example.com/profiles/davidwilson",
-      "review": "Poor service, would not recommend.",
-      "rating": 2.1
-    },
-    {
-      "name": "Sarah Lee",
-      "profile": "https://example.com/profiles/sarahlee",
-      "review": "Decent experience, nothing extraordinary.",
-      "rating": 3.7
-    }
-  ]
-  
+  {
+    "name": "Kina Sinika",
+    "profile": "https://i.ibb.co/5BrJvLk/1-11.jpg",
+    "review": "HomeScape made my house-hunting journey a breeze! With their user-friendly interface and extensive property listings, I found my dream home in no time. Their attentive customer service team guided me through every step of the process, making it stress-free and enjoyable.",
+    "rating": 4.8
+  },
+  {
+    "name": "Jane Smith",
+    "profile": "https://i.ibb.co/K2kkn4X/download-3.jpg",
+    "review": "I can't recommend HomeScape enough! As a first-time homebuyer, I was overwhelmed by the options out there, but HomeScape simplified everything. Their comprehensive search filters helped me narrow down exactly what I was looking for, and their responsive agents were always there to address any questions or concerns I had.",
+    "rating": 4.9
+  },
+  {
+    "name": "Mike Johnson",
+    "profile": "https://i.ibb.co/K2kkn4X/download-3.jpg",
+    "review": "Thanks to HomeScape, I found the perfect investment property for my portfolio. Their website is intuitive and packed with valuable information about each listing, from neighborhood demographics to market trends. The HomeScape team's expertise and dedication ensured a smooth transaction from start to finish.",
+    "rating": 3.5
+  },
+  {
+    "name": "Emily Brown",
+    "profile": "https://i.ibb.co/n8JsQdy/images-6.jpg",
+    "review": "HomeScape exceeded all my expectations! Whether I was browsing listings on my laptop or using their mobile app on the go, I appreciated the seamless experience they provided. Their commitment to client satisfaction shone through in every interaction, and I'm thrilled with the property I found through their platform.",
+    "rating": 5.0
+  },
+  {
+    "name": "David Wilson",
+    "profile": "https://i.ibb.co/G5jpYRp/images-7.jpg",
+    "review": "Choosing HomeScape was the best decision I made in my home-selling journey. Their platform showcased my property beautifully, attracting a wide pool of interested buyers in no time. The support I received from their team throughout the selling process was invaluable, and I couldn't be happier with the outcome.",
+    "rating": 2.1
+  },
+  {
+    "name": "Sarah Lee",
+    "profile": "https://i.ibb.co/ngVC5Hm/download-6.jpg",
+    "review": "HomeScape made relocating to a new city a breeze! Their website's detailed neighborhood insights helped me find the perfect area for my family. The personalized recommendations and expert guidance from their team made the entire relocation process smooth and hassle-free. I'm grateful to HomeScape for helping us find our new home sweet home.",
+    "rating": 3.7
+  }
+]

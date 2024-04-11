@@ -5,18 +5,23 @@ import Estate from "./Estate";
 import Review from "./review/Review";
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
-import { useEffect } from "react";
-// ..
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../../components/provider/AuthProvider";
+
 AOS.init();
 
 const Home = () => {
+    const { loading } = useContext(AuthContext)
+    const loadData = useLoaderData()
 
     useEffect(() => {
         document.title = "Home"
     }, [])
-    const loadData = useLoaderData();
-    // console.log(data);
 
+    if (loading) {
+        return <p>loading.....</p>
+    }
+    console.log(loadData);
     return (
         <>
             <Slider loadData={loadData} />
@@ -28,7 +33,7 @@ const Home = () => {
                         data-aos-delay="200"
                         data-aos-duration="1000"
                         data-aos-easing="ease-in-out"
-                    >Featured Properties</p>
+                    >Estate Featured Properties</p>
                     <h5 className="text-xl font-bold mb-3"
                         data-aos="fade-left"
                         data-aos-delay="200"
@@ -41,11 +46,9 @@ const Home = () => {
                 </div>
 
                 <div className="grid md:grid-cols-3 gap-3 grid-cols-1"
-
-
                 >
                     {
-                        loadData.map(data => <Estate key={data.id} data={data} />)
+                        Array.isArray(loadData) && loadData.map(data => <Estate key={data.id} data={data} />)
                     }
                 </div>
 

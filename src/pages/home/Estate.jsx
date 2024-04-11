@@ -7,8 +7,6 @@ import 'aos/dist/aos.css'; // You can also use <link> for styles
 // ..
 AOS.init();
 
-
-
 const Estate = ({ data }) => {
     const { id, image_url, segment_name, price, location, bed, baths, Area } = data;
     // console.log(data);
@@ -22,7 +20,7 @@ const Estate = ({ data }) => {
             >
                 <div className="relative">
                     <img className="h-[250px] w-full " src={image_url} alt="Shoes" />
-                    <p className="absolute left-2 bottom-1 text-green-400 opacity-90 text-2xl font-bold">{price}</p>
+                    <p className="absolute left-2 bg-white opacity-70 px-2 bottom-1 text-green-500 text-2xl font-bold">{price}</p>
                 </div>
 
                 <div className="pt-5">

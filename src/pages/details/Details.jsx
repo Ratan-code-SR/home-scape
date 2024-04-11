@@ -9,7 +9,7 @@ const Details = () => {
     const { id } = useParams()
     const findData = detailsData.find(data => data.id == id);
 
-    const { amenities, image_url, segment_name, price, location, bed, baths, Area, Status, facilities } = findData;
+    const { amenities, image_url, segment_name, price, location, bed, baths, Area, Status, facilities,description } = findData;
     return (
         <div className='my-10 bg-[#f5f7fb] p-2'>
 
@@ -37,7 +37,7 @@ const Details = () => {
                         <p className="text-2xl font-bold">Description</p>
                         <p className="border-2 w-20 border-orange-500 "></p>
                     </div>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste quo minima placeat, distinctio odit voluptatibus rem excepturi. Nam iure debitis aliquam delectus consectetur ex quae, sint repellendus fugit voluptates labore?</p>
+                    <p>{description}</p>
 
                     <div>
                         <div className=" py-2 ">
