@@ -8,6 +8,7 @@ const Nav = () => {
     const navLinks = <>
         <li className="ml-5 hover:underline transition-all delay-75 font-bold "><NavLink to='/'>Home</NavLink></li>
         <li className="ml-5 hover:underline transition-all delay-75 font-bold "><NavLink to='/about'>About</NavLink></li>
+        <li className="ml-5 hover:underline transition-all delay-75 font-bold "><NavLink to='/contact'>Contact</NavLink></li>
         <li className="ml-5 hover:underline transition-all delay-75 font-bold"><NavLink to='/updateProfile'>Update Profile</NavLink></li>
     </>
     return (

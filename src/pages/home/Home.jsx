@@ -28,13 +28,13 @@ const Home = () => {
                 </div>
 
             </section>
-            <section className="my-10">
+            <section className="my-10 ">
                 <div className="text-center py-2 ">
                     <p className="text-2xl font-bold">Client Review</p>
                     <p className="border-2 w-20 border-orange-500 mx-auto"></p>
                 </div>
 
-                <div className="">
+                <div >
                     <Review />
                 </div>
             </section>

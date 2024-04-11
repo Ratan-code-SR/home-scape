@@ -4,8 +4,9 @@ import Footer from '../components/footer/Footer'
 
 const Root = () => {
     return (
+
         <div>
-            <header className='container mx-auto px-4'>
+            <header  className='container mx-auto px-4 bg-green-200'>
                 <Nav />
             </header>
             <main className='container mx-auto px-4'>
