@@ -2,7 +2,10 @@ import { Link } from "react-router-dom";
 import { CiLocationOn } from "react-icons/ci";
 import { MdOutlineBedroomParent, MdBathtub ,MdOutlineSquareFoot,MdAddHomeWork } from "react-icons/md";
 
-
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
+AOS.init();
 
 
 
@@ -12,7 +15,11 @@ const Estate = ({ data }) => {
     return (
         <>
 
-            <div className="card w-full bg-base-100 p-2 border-2 border-green-300 rounded-md">
+            <div className="card w-full bg-base-100 p-2 border-2 border-green-300 rounded-md"
+                 data-aos="zoom-in"
+                 data-aos-delay="50"
+                 data-aos-duration="1000"
+            >
                 <div className="relative">
                     <img className="h-[250px] w-full " src={image_url} alt="Shoes" />
                     <p className="absolute left-2 bottom-1 text-green-400 opacity-90 text-2xl font-bold">{price}</p>

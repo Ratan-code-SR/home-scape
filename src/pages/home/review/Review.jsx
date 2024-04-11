@@ -43,7 +43,8 @@ const Review = () => {
                 {
                     review.map((data, index) => (
                         <SwiperSlide key={index} >
-                            <div className='md:w-[500px] w-full bg-white p-10 rounded-md relative'>
+                            <div className='md:w-[500px] w-full bg-white p-10 rounded-md relative'
+                            >
                                 <div className='flex gap-2 text-orange-300 items-center justify-center my-1'>
                                     <>
                                         <li><FaRegStar /></li>
