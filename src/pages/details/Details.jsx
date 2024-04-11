@@ -84,8 +84,6 @@ const Details = () => {
                                     <table className="table">
 
                                         <tbody>
-
-
                                             <tr>
                                                 {
                                                     amenities.slice(0, 3).map(amenity => <td>
@@ -142,7 +140,10 @@ const Details = () => {
                                 <textarea className='input input-bordered rounded-none' name="" id="" cols="30" rows="10" placeholder=' message'></textarea>
                             </div>
                             <div className="form-control mt-6">
-                                <button className="p-3 text-white bg-[#ff385c]">Submit Request</button>
+                                <button  className="relative rounded px-5 py-2.5 overflow-hidden group bg- bg-[#ff385c]  hover:bg-gradient-to-r hover:from-green-500 hover:to-green-400 text-white hover:text-black hover:ring-2 hover:ring-offset-2 hover:ring-green-400 transition-all ease-out duration-300">
+                                    <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
+                                    <span className="relative">Submit Request</span>
+                                </button>
                             </div>
                         </form>
                     </div>

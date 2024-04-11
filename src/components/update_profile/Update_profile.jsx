@@ -27,7 +27,7 @@ const Update_profile = () => {
         updateProfile(user, {
             displayName: username, photoURL: imageUrl, email: email
         }).then(() => {
-          
+
             toast.success('Profile update successfully!')
 
         }).catch((error) => {
@@ -55,7 +55,7 @@ const Update_profile = () => {
                                 <span className="label-text font-bold">Name</span>
                             </label>
                             <input
-                             defaultValue={`${user.displayName? user.displayName: ""}`} 
+                                defaultValue={`${user.displayName ? user.displayName : ""}`}
                                 {...register("name")}
                                 {...register("name", { required: false })}
                                 type="text" placeholder="name" className="input input-bordered" />
@@ -66,9 +66,9 @@ const Update_profile = () => {
                             <label className="label">
                                 <span className="label-text font-bold">Email</span>
                             </label>
-                            <input 
-                              defaultValue={`${user.email? user.email: ""}`} 
-                         
+                            <input
+                                defaultValue={`${user.email ? user.email : ""}`}
+
                                 {...register("email")}
                                 {...register("email", { required: false })}
 
@@ -81,7 +81,7 @@ const Update_profile = () => {
                                 <span className="label-text font-bold">photoURL</span>
                             </label>
                             <input
-                            defaultValue={`${user.photoURL? user.photoURL: ""}`} 
+                                defaultValue={`${user.photoURL ? user.photoURL : ""}`}
                                 {...register("photoURL")}
                                 {...register("photoURL", { required: false })}
                                 type="text" placeholder="Image URL" className="input input-bordered" />
@@ -89,7 +89,10 @@ const Update_profile = () => {
                         </div>
 
                         <div className="form-control mt-6">
-                            <button type="submit" className="btn btn-success text-white">Update Profile</button>
+                            <button className="relative rounded px-5 py-2.5 overflow-hidden group bg- bg-[#ff385c]  hover:bg-gradient-to-r hover:from-green-500 hover:to-green-400 text-white hover:text-black hover:ring-2 hover:ring-offset-2 hover:ring-green-400 transition-all ease-out duration-300">
+                                <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
+                                <span className="relative">Update Profile</span>
+                            </button>
                         </div>
 
                     </form>
