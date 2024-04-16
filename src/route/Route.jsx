@@ -9,12 +9,13 @@ import Protected from "../components/protected/Protected";
 import Update_profile from "../components/update_profile/Update_profile";
 import Error from "../pages/error/Error";
 import Contact from "../pages/contact/Contact";
+import About from "../pages/about/About";
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <Root />,
-        errorElement: <Error/>,
+        errorElement: <Error />,
         children: [
             {
                 path: "/",
@@ -43,7 +44,11 @@ const router = createBrowserRouter([
             },
             {
                 path: "/contact",
-                element: <Contact/>
+                element: <Protected><Contact /></Protected> 
+            },
+            {
+                path: "/about",
+                element: <About />
             }
         ]
     },

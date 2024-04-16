@@ -20,7 +20,9 @@ const Home = () => {
     }, [])
 
     if (loading) {
-        return <p>loading.....</p>
+        return <div className="text-center my-72 ">
+            <span className="loading loading-spinner text-neutral"></span>
+        </div>
     }
     console.log(loadData);
     return (
