@@ -6,7 +6,7 @@ import { useEffect } from "react";
 
 const Contact = () => {
     useEffect(() => {
-        document.title = "Contact"
+        document.title = "Contact-HomeScape"
     }, [])
     return (
         <section className="py-6 bg-gradient-to-r from-green-200 to-green-400 text-black ">

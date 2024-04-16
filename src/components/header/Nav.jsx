@@ -42,8 +42,8 @@ const Nav = () => {
             <div className="navbar-end flex gap-3">
                 {
                     user ? <>
-                        <div className="tooltip tooltip-bottom z-10 d" data-tip={`${user.displayName ? user.displayName : "Not Found"}`}>
-                            <div className="  ">
+                        <div className="md:tooltip md:tooltip-bottom z-10 " data-tip={`${user.displayName ? user.displayName : "Not Found"}`}>
+                            <div className=" ">
                                 <img className="w-10 h-10 rounded-full " alt="Tailwind CSS Navbar component " src={user.photoURL} />
                             </div>
                         </div>

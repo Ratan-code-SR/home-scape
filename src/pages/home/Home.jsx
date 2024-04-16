@@ -16,7 +16,7 @@ const Home = () => {
     const loadData = useLoaderData()
 
     useEffect(() => {
-        document.title = "Home"
+        document.title = "HomeScape"
     }, [])
 
     if (loading) {
@@ -43,7 +43,7 @@ const Home = () => {
                         data-aos-duration="1000"
                         data-aos-easing="ease-in-out"
 
-                    >Handpicked properties by our team.</h5>
+                    >Discover Your Dream Home</h5>
                     <p className="border-2 w-20 border-orange-500 mx-auto "></p>
 
                 </div>

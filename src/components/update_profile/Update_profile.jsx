@@ -16,7 +16,7 @@ const Update_profile = () => {
     } = useForm()
     const { user } = useContext(AuthContext)
     useEffect(() => {
-        document.title = "Update Profile"
+        document.title = "Update Profile-HomeScape"
     }, [])
     const onSubmit = (data) => {
         const email = data.email;

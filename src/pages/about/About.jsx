@@ -1,5 +1,9 @@
+import { useEffect } from "react";
 
 const About = () => {
+    useEffect(() => {
+        document.title = "About-HomeScape"
+    }, [])
     return (
         <section>
             <section className="md:flex  justify-between  my-10 gap-5 grid grid-cols-1">
