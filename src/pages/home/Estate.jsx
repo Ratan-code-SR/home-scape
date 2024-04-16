@@ -26,10 +26,10 @@ const Estate = ({ data }) => {
                 <div className="pt-5">
                     <h2 className="card-title"><MdAddHomeWork />{segment_name}</h2>
                     <h5 className="flex gap-2 items-center"><CiLocationOn /> {location}</h5>
-                    <div className="flex gap-5 text-md items-center">
-                        <p className="flex gap-1 items-center"><MdOutlineBedroomParent /> {bed} bedroom</p>
-                        <p className="flex gap-1 items-center"><MdBathtub /> {baths} baths</p>
-                        <p className="flex gap-1 items-center"><MdOutlineSquareFoot /> {Area}</p>
+                <div className=" md:grid md:grid-cols-2 flex md:gap-2 gap-2  items-center">
+                        <p className="flex md:gap-1 gap-0 items-center text-sm "><MdOutlineBedroomParent /> {bed} bedroom</p>
+                        <p className="flex md:gap-1 gap-0 items-center"><MdBathtub /> {baths} baths</p>
+                        <p className="flex md:gap-1 gap-0 items-center text-sm "><MdOutlineSquareFoot /> {Area}</p>
                     </div>
 
                     <div className="card-actions justify-end mt-2 text-center">

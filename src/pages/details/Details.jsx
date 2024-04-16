@@ -8,14 +8,12 @@ const Details = () => {
     const detailsData = useLoaderData()
     const { id } = useParams()
     const findData = detailsData.find(data => data.id == id);
-
-    const { amenities, image_url, segment_name, price, location, bed, baths, Area, Status, facilities,description } = findData;
+    const { amenities, image_url, segment_name, price, location, bed, baths, Area, Status, facilities, description } = findData;
     return (
         <div className='my-10 bg-[#f5f7fb] p-2'>
-
             <div className='md:flex grid grid-cols-1 gap-5 '>
-                <div className='md:w-1/2 w-full'>
-                    <div className='flex justify-between'>
+                <div className='md:w-1/2 w-full '>
+                    <div className='flex justify-between items-center'>
                         <div>
                             <p className='md:text-3xl leading-5'>{segment_name} <span className='bg-[#ff385c] text-sm text-white  md:font-bold px-2 rounded-full'>{Status}</span></p>
                             <p className="flex items-center my-1"><CiLocationOn /> {location}</p>
@@ -25,12 +23,13 @@ const Details = () => {
                             <p>{Area}</p>
                         </div>
                     </div>
-                    <div className='bg-[#ffffff] p-4 shadow-xl'>
+                    <div className='bg-[#ffffff]  p-4 shadow-xl'>
                         <div className=" py-2 ">
                             <p className="text-2xl font-bold">Properties</p>
                             <p className="border-2 w-20 border-orange-500 "></p>
                         </div>
-                        <img src={image_url} alt="" className='w-full' /></div>
+                        <img src={image_url} alt="" />
+                    </div>
                 </div>
                 <div className='md:w-1/2 w-full' >
                     <div className=" py-2 ">
@@ -43,7 +42,7 @@ const Details = () => {
                         <div className=" py-2 ">
                             <p className="text-2xl font-bold">Property Details</p>
                             <p className="border-2 w-20 border-orange-500 "></p>
-                            <div>
+                            <>
                                 <div className="overflow-x-auto">
                                     <table className="table">
                                         <tbody>
@@ -63,7 +62,7 @@ const Details = () => {
 
                                             <tr>
 
-                                                <td ><p className='flex items-center gap-2'><MdBedroomParent />{facilities[0]}</p></td>
+                                                <td ><p className='flex items-center gap-2 '><MdBedroomParent />{facilities[0]}</p></td>
                                                 <td ><p className='flex items-center gap-2'><BiSwim />{facilities[1]}</p></td>
                                                 <td ><p className='flex items-center gap-2'><MdElevator />{facilities[2]}</p></td>
 
@@ -71,40 +70,41 @@ const Details = () => {
                                         </tbody>
                                     </table>
                                 </div>
-                            </div>
+                            </>
                         </div>
-                    </div>
-                    {/* ========================= */}
-                    <div>
-                        <div className=" py-2 ">
-                            <p className="text-2xl font-bold">Amenities</p>
-                            <p className="border-2 w-20 border-orange-500 "></p>
-                            <div>
-                                <div className="overflow-x-auto">
-                                    <table className="table">
+                        <div>
+                            <div className=" py-2 ">
+                                <p className="text-2xl font-bold">Amenities</p>
+                                <p className="border-2 w-20 border-orange-500 "></p>
+                                <div>
+                                    <div className="overflow-x-auto">
+                                        <table className="table">
 
-                                        <tbody>
-                                            <tr>
-                                                {
-                                                    amenities.slice(0, 3).map(amenity => <td>
-                                                        <p className='flex gap-3 items-center'><span className='text-green-400 font-bold'><FaRegCheckCircle /></span> {amenity}</p>
-                                                    </td>)
-                                                }
-                                            </tr>
-                                            <tr>
-                                                {
-                                                    amenities.slice(3, 6).map(amenity => <td>
-                                                        <p className='flex gap-3 items-center'> <span className='text-green-400 font-bold'><FaRegCheckCircle /></span> {amenity}</p>
-                                                    </td>)
-                                                }
-                                            </tr>
+                                            <tbody>
+                                                <tr>
+                                                    {
+                                                        amenities.slice(0, 3).map(amenity => <td>
+                                                            <p className='flex gap-3 items-center'><span className='text-green-400 font-bold'><FaRegCheckCircle /></span> {amenity}</p>
+                                                        </td>)
+                                                    }
+                                                </tr>
+                                                <tr>
+                                                    {
+                                                        amenities.slice(3, 6).map(amenity => <td>
+                                                            <p className='flex gap-3 items-center'> <span className='text-green-400 font-bold'><FaRegCheckCircle /></span> {amenity}</p>
+                                                        </td>)
+                                                    }
+                                                </tr>
 
-                                        </tbody>
-                                    </table>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    {/* ========================= */}
+
                 </div>
 
             </div>
@@ -140,7 +140,7 @@ const Details = () => {
                                 <textarea className='input input-bordered rounded-none' name="" id="" cols="30" rows="10" placeholder=' message'></textarea>
                             </div>
                             <div className="form-control mt-6">
-                                <button  className="relative rounded px-5 py-2.5 overflow-hidden group bg- bg-[#ff385c]  hover:bg-gradient-to-r hover:from-green-500 hover:to-green-400 text-white hover:text-black hover:ring-2 hover:ring-offset-2 hover:ring-green-400 transition-all ease-out duration-300">
+                                <button className="relative rounded px-5 py-2.5 overflow-hidden group bg- bg-[#ff385c]  hover:bg-gradient-to-r hover:from-green-500 hover:to-green-400 text-white hover:text-black hover:ring-2 hover:ring-offset-2 hover:ring-green-400 transition-all ease-out duration-300">
                                     <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
                                     <span className="relative">Submit Request</span>
                                 </button>

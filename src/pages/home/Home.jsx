@@ -12,9 +12,15 @@ import Gallery from "./gallery/Gallery";
 AOS.init();
 
 const Home = () => {
+    const [loadData, setLoadData] = useState([])
     const { loading } = useContext(AuthContext)
-    const loadData = useLoaderData()
+    const data = useLoaderData()
 
+    useEffect(() => {
+        setLoadData(data)
+    }, [])
+
+    
     useEffect(() => {
         document.title = "HomeScape"
     }, [])
@@ -24,7 +30,7 @@ const Home = () => {
             <span className="loading loading-spinner text-neutral"></span>
         </div>
     }
-    console.log(loadData);
+    // console.log(loadData);
     return (
         <>
             <Slider loadData={loadData} />
@@ -45,9 +51,9 @@ const Home = () => {
 
                     >Discover Your Dream Home</h5>
                     <p className="border-2 w-20 border-orange-500 mx-auto "
-                     data-aos="flip-left"
-                     data-aos-easing="ease-out-cubic"
-                     data-aos-duration="1200"
+                        data-aos="flip-left"
+                        data-aos-easing="ease-out-cubic"
+                        data-aos-duration="1200"
                     ></p>
 
                 </div>
@@ -68,9 +74,9 @@ const Home = () => {
                         data-aos-duration="1000"
                     >Our Feature Gallery </p>
                     <p className="border-2 w-20 border-orange-500 mx-auto"
-                     data-aos="flip-left"
-                     data-aos-easing="ease-out-cubic"
-                     data-aos-duration="1200"
+                        data-aos="flip-left"
+                        data-aos-easing="ease-out-cubic"
+                        data-aos-duration="1200"
                     ></p>
                 </div>
                 <div>
@@ -85,9 +91,9 @@ const Home = () => {
                         data-aos-duration="1000"
                     >Client Review</p>
                     <p className="border-2 w-20 border-orange-500 mx-auto"
-                     data-aos="flip-left"
-                     data-aos-easing="ease-out-cubic"
-                     data-aos-duration="1200"
+                        data-aos="flip-left"
+                        data-aos-easing="ease-out-cubic"
+                        data-aos-duration="1200"
                     ></p>
                 </div>
                 <div >

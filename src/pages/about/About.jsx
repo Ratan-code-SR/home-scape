@@ -8,10 +8,9 @@ const About = () => {
         <section>
             <section className="md:flex  justify-between  my-10 gap-5 grid grid-cols-1">
 
-                <div className="1/2">
-                    <img src="https://i.ibb.co/7GPqDLB/4.jpg" alt="" />
-                </div>
-                <div className="md:w-2/4">
+                    <img src="https://i.ibb.co/7GPqDLB/4.jpg" className="md:w-1/2 w-full" alt="" />
+               
+                <div className="md:w-2/4 lg:w-2/4">
                     <div className="py-2 md:text-start text-center ">
                         <h1 className="text-2xl font-bold"
                             data-aos="flip-left"
