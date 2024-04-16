@@ -44,7 +44,11 @@ const Home = () => {
                         data-aos-easing="ease-in-out"
 
                     >Discover Your Dream Home</h5>
-                    <p className="border-2 w-20 border-orange-500 mx-auto "></p>
+                    <p className="border-2 w-20 border-orange-500 mx-auto "
+                     data-aos="flip-left"
+                     data-aos-easing="ease-out-cubic"
+                     data-aos-duration="1200"
+                    ></p>
 
                 </div>
 
@@ -63,7 +67,11 @@ const Home = () => {
                         data-aos-delay="50"
                         data-aos-duration="1000"
                     >Our Feature Gallery </p>
-                    <p className="border-2 w-20 border-orange-500 mx-auto"></p>
+                    <p className="border-2 w-20 border-orange-500 mx-auto"
+                     data-aos="flip-left"
+                     data-aos-easing="ease-out-cubic"
+                     data-aos-duration="1200"
+                    ></p>
                 </div>
                 <div>
                     <Gallery />
@@ -76,7 +84,11 @@ const Home = () => {
                         data-aos-delay="50"
                         data-aos-duration="1000"
                     >Client Review</p>
-                    <p className="border-2 w-20 border-orange-500 mx-auto"></p>
+                    <p className="border-2 w-20 border-orange-500 mx-auto"
+                     data-aos="flip-left"
+                     data-aos-easing="ease-out-cubic"
+                     data-aos-duration="1200"
+                    ></p>
                 </div>
                 <div >
                     <Review />
