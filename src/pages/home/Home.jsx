@@ -7,6 +7,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../components/provider/AuthProvider";
+import Gallery from "./gallery/Gallery";
 
 AOS.init();
 
@@ -53,6 +54,19 @@ const Home = () => {
                 </div>
 
             </section>
+            <section>
+                <div className="text-center py-2 ">
+                    <p className="text-2xl font-bold"
+                        data-aos="flip-right"
+                        data-aos-delay="50"
+                        data-aos-duration="1000"
+                    >Our Feature Gallery </p>
+                    <p className="border-2 w-20 border-orange-500 mx-auto"></p>
+                </div>
+                <div>
+                    <Gallery />
+                </div>
+            </section>
             <section className="my-10 ">
                 <div className="text-center py-2 ">
                     <p className="text-2xl font-bold"
@@ -62,7 +76,6 @@ const Home = () => {
                     >Client Review</p>
                     <p className="border-2 w-20 border-orange-500 mx-auto"></p>
                 </div>
-
                 <div >
                     <Review />
                 </div>
